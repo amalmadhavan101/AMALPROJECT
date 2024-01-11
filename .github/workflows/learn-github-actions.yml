@@ -19,8 +19,8 @@ jobs:
   steps:
    - uses: actions/checkout@v4
    - name: python install
-   - run: npm install -g python
-   - run: python --version
+     run: npm install -g python
+  
      
   
  
