@@ -14,6 +14,17 @@ jobs:
      
    - name: Check version
      run: docker --version
+ python-check:
+  runs-on: ubuntu-latest
+  steps:
+   - name: python install
+   - run: npm install -g python
+   - run: python --version
+     
+  
+ 
+  
+  
     
   
     
