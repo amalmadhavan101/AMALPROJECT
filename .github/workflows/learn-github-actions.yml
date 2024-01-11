@@ -9,8 +9,13 @@ jobs:
    - uses: actions/setup-node@v3
      with:
       node-version: '14'
-    name: install docker
-    - run: npm install -g docker
+   - name: install docker
+     run:  npm install -g docker
+     
+   - name: Check version
+     run: docker --version
+    
+  
     
 
   
