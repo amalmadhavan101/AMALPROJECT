@@ -10,5 +10,5 @@ jobs:
      with:
       node-version: '14'
    - run: npm install -g docker
-   - run: docker -v
+   - run: docker --version
   
