@@ -17,6 +17,7 @@ jobs:
  python-check:
   runs-on: ubuntu-latest
   steps:
+   - uses: actions/checkout@v4
    - name: python install
    - run: npm install -g python
    - run: python --version
