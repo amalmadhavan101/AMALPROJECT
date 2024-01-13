@@ -1,4 +1,5 @@
 name: github-action-learning
+run-name: ${{ github.actor }} is learning GitHub Actions
 on:
   push:
     branches:
@@ -25,7 +26,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
+      - name: Set up Python and check version
         uses: actions/setup-python@v2
         with:
           python-version: '3.x' # Specify your Python version here
