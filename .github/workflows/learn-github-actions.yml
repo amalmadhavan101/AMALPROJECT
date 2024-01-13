@@ -6,22 +6,8 @@ on:
       - main
 
 jobs:
-  Docker-SetUp:
-    runs-on: ip-172-31-23-46
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-
-      - name: Check Docker version
-        run: docker --version
-
-  python-SetUp:
-    runs-on: ip-172-31-23-46
+  Python-SetUp:
+    runs-on: ip-172-31-23-46  # Replace with the label of your self-hosted runner
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -33,3 +19,17 @@ jobs:
 
       - name: Check Python version
         run: python --version
+
+  Docker-SetUp:
+    runs-on: ip-172-31-23-46  # Replace with the label of your self-hosted runner
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker.io
+
+      - name: Check Docker version
+        run: docker --version
