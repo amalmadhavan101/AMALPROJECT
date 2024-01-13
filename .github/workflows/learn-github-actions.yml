@@ -1,36 +1,34 @@
 name: github-action-learning
-run-name: ${{ github.actor }} is learning GitHub Actions
-on: [push]
-jobs:
- check-bats-version:
-  runs-on: ubuntu-latest
-  steps:
-   - uses: actions/checkout@v4
-   - uses: actions/setup-node@v3
-     with:
-      node-version: '14'
-   - name: install docker
-     run:  npm install -g docker
-     
-   - name: Check version
-     run: docker --version
- python-check:
-  runs-on: ubuntu-latest
-  steps:
-   - uses: actions/checkout@v4
-   - name: python install
-     run: npm install -g python
-   - name: check python version
-     run: python --version
-     
-  
-     
-  
- 
-  
-  
-    
-  
-    
+on:
+  push:
+    branches:
+      - main
 
-  
+jobs:
+  check-Docker-Python-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Check Docker version
+        run: docker --version
+
+  python-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x' # Specify your Python version here
+
+      - name: Check Python version
+        run: python --version
