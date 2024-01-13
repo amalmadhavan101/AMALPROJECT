@@ -7,7 +7,7 @@ on:
 
 jobs:
   Python-SetUp:
-    runs-on: ip-172-31-23-46  # Replace with the label of your self-hosted runner
+    runs-on: 'self-hosted'  
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -21,7 +21,7 @@ jobs:
         run: python --version
 
   Docker-SetUp:
-    runs-on: ip-172-31-23-46  # Replace with the label of your self-hosted runner
+    runs-on: 'self-hosted'  
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
