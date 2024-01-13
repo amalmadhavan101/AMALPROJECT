@@ -14,11 +14,13 @@ jobs:
 
       - name: Set up Python and check version
         uses: actions/setup-python@v2
-        with:
-          python-version: 'latest' # Specify your Python version here
+      - name: Install Python
+        run: |
+          sudo yum update -y
+          sudo yum install python3 -y
 
       - name: Check Python version
-        run: python --version
+        run: python3 --version
 
   Docker-SetUp:
     runs-on: 'self-hosted'  
@@ -28,8 +30,12 @@ jobs:
 
       - name: Set up Docker
         run: |
-          sudo apt-get update
-          sudo apt-get install -y docker.io
+          sudo yum update -y
+          sudo yum install docker -y
+          sudo service docker start
+          sudo usermod -a -G docker $USER  # Add the current user to the docker group
+          newgrp docker  # Activate the changes to the group membership
+          
 
       - name: Check Docker version
         run: docker --version
