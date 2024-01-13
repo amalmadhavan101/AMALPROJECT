@@ -12,8 +12,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Python and check version
-        uses: actions/setup-python@v2
       - name: Install Python
         run: |
           sudo yum update -y
