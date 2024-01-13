@@ -15,7 +15,7 @@ jobs:
       - name: Set up Python and check version
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x' # Specify your Python version here
+          python-version: 'latest' # Specify your Python version here
 
       - name: Check Python version
         run: python --version
