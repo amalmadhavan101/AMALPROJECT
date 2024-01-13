@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  check-Docker-Python-version:
+  Docker-SetUp:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
@@ -20,7 +20,7 @@ jobs:
       - name: Check Docker version
         run: docker --version
 
-  python-check:
+  python-SetUp:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
