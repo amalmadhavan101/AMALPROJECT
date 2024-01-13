@@ -21,7 +21,7 @@ jobs:
         run: docker --version
 
   python-SetUp:
-    runs-on: ubuntu-latest
+    runs-on: ip-172-31-23-46
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
