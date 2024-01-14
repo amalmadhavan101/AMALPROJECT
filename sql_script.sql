@@ -15,3 +15,4 @@ CREATE TABLE IF NOT EXISTS users (
 INSERT INTO users (id, username, email) VALUES
 (1, 'john_doe', 'john@example.com'),
 (2, 'jane_doe', 'jane@example.com');
+select * from users;
