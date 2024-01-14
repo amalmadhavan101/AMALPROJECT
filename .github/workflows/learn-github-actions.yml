@@ -6,20 +6,6 @@ on:
       - main
 
 jobs:
-  Python-SetUp:
-    runs-on: 'self-hosted'  
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Install Python
-        run: |
-          sudo yum update -y
-          sudo yum install python3 -y
-
-      - name: Check Python version
-        run: python3 --version
-
   Docker-SetUp:
     runs-on: 'self-hosted'  
     steps:
