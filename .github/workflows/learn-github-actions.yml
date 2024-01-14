@@ -56,4 +56,4 @@ jobs:
         run: |
           docker ps
           # Connect to MySQL and execute a query
-          # docker exec -it mysql-container mysql -uroot -p'your_password' -e "SHOW DATABASES;"
+          docker exec mysql-container mysql -uroot -p'your_password' -e "SHOW DATABASES;"
