@@ -1,10 +1,10 @@
-name: github-action-learning
-run-name: ${{ github.actor }} is learning GitHub Actions
+name: github-action-learning2
+run-name: ${{ github.actor }} is learning GitHub Actions 2nd file
 on:
   push:
     branches:
       - main
-    workflows:
+  workflows:
       - "amalsql.yml"
 
 jobs:
@@ -42,7 +42,7 @@ jobs:
       - name: Execute SQL Queries
         run: |
           # Fetch the content of the SQL script file
-          SQL_SCRIPT_CONTENT=$(cat sql_script.sql)
+          SQL_SCRIPT_CONTENT=$(cat sql-script2.sql)
 
           # Execute the SQL script in the MySQL container
           echo "$SQL_SCRIPT_CONTENT" | docker exec -i mysql-container mysql -uroot -p'your_password'
