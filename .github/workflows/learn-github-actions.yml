@@ -5,7 +5,7 @@ on:
     branches:
       - main
     workflows:
-      - "learn-github-actions.yml"
+      - "workflow-a.yml"
 
 jobs:
   Docker-SetUp:
