@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    workflows:
+      - "learn-github-actions.yml"
 
 jobs:
   Docker-SetUp:
