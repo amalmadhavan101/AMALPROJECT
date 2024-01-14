@@ -20,20 +20,41 @@ jobs:
       - name: Check Python version
         run: python3 --version
 
-  SQL-Server-SetUp:
+  Docker-SetUp:
     runs-on: 'self-hosted'  
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up SQL Server
+      - name: Set up Docker
         run: |
-          # Install SQL Server (example commands for CentOS)
-          sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/8/prod.repo
-          sudo yum install -y mssql-tools unixODBC-devel
+          sudo yum update -y
+          sudo yum install docker -y
+          sudo service docker start
+          sudo usermod -a -G docker $USER  # Add the current user to the docker group
+          newgrp docker  # Activate the changes to the group
           
-          # Wait for SQL Server to start
-          sleep 60
+      - name: Check Docker version
+        run: docker --version
 
-          # Connect to SQL Server and execute a query
-          /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P Your_Password123 -Q "SELECT name FROM sys.databases;"
+  MySQL-SetUp:
+    runs-on: 'self-hosted'  
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up MySQL Container
+        run: |
+          # Pull the MySQL Docker image
+          docker pull mysql:latest
+
+          # Run MySQL container
+          docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=your_password -d -p 3306:3306 mysql:latest
+
+          # Wait for MySQL to start (adjust the sleep duration as needed)
+          sleep 30
+
+      - name: Check MySQL Database
+        run: |
+          # Connect to MySQL and execute a query
+          docker exec -it mysql-container mysql -uroot -p'your_password' -e "SHOW DATABASES;"
