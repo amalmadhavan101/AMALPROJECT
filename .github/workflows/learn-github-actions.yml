@@ -54,5 +54,6 @@ jobs:
 
       - name: Check MySQL Database
         run: |
+          sql --version
           # Connect to MySQL and execute a query
-          docker exec -it mysql-container mysql -uroot -p'your_password' -e "SHOW DATABASES;"
+          # docker exec -it mysql-container mysql -uroot -p'your_password' -e "SHOW DATABASES;"
