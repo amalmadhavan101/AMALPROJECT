@@ -32,9 +32,8 @@ jobs:
           sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/8/prod.repo
           sudo yum install -y mssql-tools unixODBC-devel
           
-          # Wait for SQL Server to start (adjust the sleep duration as needed)
-          sleep 30
+          # Wait for SQL Server to start
+          sleep 60
 
           # Connect to SQL Server and execute a query
           /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P Your_Password123 -Q "SELECT name FROM sys.databases;"
-
