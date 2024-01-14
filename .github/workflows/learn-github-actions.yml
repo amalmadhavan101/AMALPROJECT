@@ -17,8 +17,8 @@ jobs:
           sudo yum update -y
           sudo yum install docker -y
           sudo service docker start
-          sudo usermod -a -G docker $USER  # Add the current user to the docker group
-          newgrp docker  # Activate the changes to the group
+          sudo usermod -a -G docker $USER
+          newgrp docker
           
       - name: Check Docker version
         run: docker --version
@@ -37,9 +37,10 @@ jobs:
           docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=your_password -d -p 3306:3306 mysql:latest
           sleep 30
 
-
-      - name: Check MySQL Database
+      - name: Execute SQL Queries
         run: |
-          docker ps
-          # Connect to MySQL and execute a query
-          docker exec -i mysql-container mysql -uroot -p'your_password' < sql_script.sql
+          # Fetch the content of the SQL script file
+          SQL_SCRIPT_CONTENT=$(cat sql_script.sql)
+
+          # Execute the SQL script in the MySQL container
+          echo "$SQL_SCRIPT_CONTENT" | docker exec -i mysql-container mysql -uroot -p'your_password'
