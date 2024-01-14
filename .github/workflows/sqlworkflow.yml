@@ -4,8 +4,8 @@ on:
   push:
     branches:
       - main
-    workflows:
-      - "sqlworkflow.yml"
+    paths:
+      - "AMALPROJECT/.github/workflows/sqlworkflow.yml"
 
 jobs:
   Docker-SetUp:
