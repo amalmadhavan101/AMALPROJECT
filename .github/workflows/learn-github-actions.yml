@@ -44,15 +44,13 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up MySQL Container
-        run: |
-          # Pull the MySQL Docker image
+        run: | 
+          docker stop mysql-container || true
+          docker rm mysql-container || true
           docker pull mysql:latest
-
-          # Run MySQL container
           docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=your_password -d -p 3306:3306 mysql:latest
-
-          # Wait for MySQL to start (adjust the sleep duration as needed)
           sleep 30
+
 
       - name: Check MySQL Database
         run: |
