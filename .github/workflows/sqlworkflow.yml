@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "AMALPROJECT/.github/workflows/sqlworkflow.yml"
+      - AMALPROJECT/.github/workflows/sqlworkflow.yml
 
 jobs:
   Docker-SetUp:
