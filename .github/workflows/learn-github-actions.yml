@@ -20,20 +20,21 @@ jobs:
       - name: Check Python version
         run: python3 --version
 
-  Docker-SetUp:
+  SQL-Server-SetUp:
     runs-on: 'self-hosted'  
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Docker
+      - name: Set up SQL Server
         run: |
-          sudo yum update -y
-          sudo yum install docker -y
-          sudo service docker start
-          sudo usermod -a -G docker $USER  # Add the current user to the docker group
-          newgrp docker  # Activate the changes to the group membership
+          # Install SQL Server (example commands for CentOS)
+          sudo curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/rhel/8/prod.repo
+          sudo yum install -y mssql-tools unixODBC-devel
           
+          # Wait for SQL Server to start (adjust the sleep duration as needed)
+          sleep 30
 
-      - name: Check Docker version
-        run: docker --version
+          # Connect to SQL Server and execute a query
+          /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P Your_Password123 -Q "SELECT name FROM sys.databases;"
+
