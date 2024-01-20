@@ -16,10 +16,9 @@ jobs:
 
       - name: Set up Docker
         run: |
-          sudo apt update
-          sudo apt install docker.io -y
-          sudo service docker start
-          sudo usermod -aG docker $USER
+          apt install docker.io -y
+          service docker start
+          usermod -aG docker $USER
           newgrp docker
 
           
