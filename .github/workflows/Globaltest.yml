@@ -1,0 +1,19 @@
+name: Example Workflow
+
+on: [push]
+
+env:
+  REPO_OWNER: ${{ github.repository_owner }}
+  REPO_NAME: ${{ github.event.repository.name }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2
+
+    - name: Print Repository Information
+      run: |
+        echo "Repository Owner: $REPO_OWNER"
+        echo "Repository Name: $REPO_NAME"
