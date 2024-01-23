@@ -22,7 +22,7 @@ jobs:
           for SQL_SCRIPT_FILE in "${SQL_SCRIPT_FILES[@]}"; do
             echo "Executing SQL script: $SQL_SCRIPT_FILE"
             
-            # Fetch the content of the SQL script file
+            
             SQL_SCRIPT_CONTENT=$(cat "$SQL_SCRIPT_FILE")
 
             # Execute the SQL script using the MySQL client
