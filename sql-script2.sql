@@ -5,7 +5,7 @@ CREATE DATABASE IF NOT EXISTS amal124;
 USE amal124;
 
 -- Create a table
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS users2 (
     id INT PRIMARY KEY,
     username VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL
@@ -15,4 +15,4 @@ CREATE TABLE IF NOT EXISTS users (
 INSERT INTO users (id, username, email) VALUES
 (1, 'ama', 'john@egmail.com'),
 (2, 'kic', 'janre@exampe.com');
-select * from users;
+select * from users2;
