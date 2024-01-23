@@ -1,0 +1,23 @@
+name: work lesarning
+run-name: ${{ github.actor }} is learning GitHub Actions for company
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/elyson.yml"
+
+jobs:
+  MySQL-SetUp:
+    runs-on: 'self-hosted'  
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Execute SQL Queries
+        run: |
+          # Fetch the content of the SQL script file
+          SQL_SCRIPT_CONTENT=$(cat sql-script2.sql)
+
+          # Execute the SQL script using the MySQL client
+          mysql -h localhost -u amal -p'amal123' -e "$SQL_SCRIPT_CONTENT"
