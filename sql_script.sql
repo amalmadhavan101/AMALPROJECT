@@ -1,5 +1,5 @@
 -- Create a database
-CREATE DATABASE IF NOT EXISTS amal123;
+--CREATE DATABASE IF NOT EXISTS amal123;
 
 -- Use the created database
 USE amal123;
@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS userss (
 );
 
 -- Insert some data into the table
-INSERT INTO userss (id, username, email) VALUES
-(1, 'john_doe', 'john@example.com'),
-(2, 'jane_doe', 'jane@example.com');
+--INSERT INTO userss (id, username, email) VALUES
+--(1, 'john_doe', 'john@example.com'),
+--(2, 'jane_doe', 'jane@example.com');
 select * from userss;
