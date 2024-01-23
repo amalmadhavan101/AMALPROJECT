@@ -16,7 +16,7 @@ jobs:
       - name: Execute SQL Queries
         run: |
           # Define an array of SQL script files
-          SQL_SCRIPT_FILES=("sql-script1.sql" "sql-script2.sql")
+          SQL_SCRIPT_FILES=("sql-script.sql" "sql-script2.sql")
 
           # Loop through the array and execute each SQL script
           for SQL_SCRIPT_FILE in "${SQL_SCRIPT_FILES[@]}"; do
