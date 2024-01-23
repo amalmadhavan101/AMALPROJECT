@@ -9,7 +9,7 @@ USE amal123;
  --   id INT PRIMARY KEY,
    -- username VARCHAR(255) NOT NULL,
     -- email VARCHAR(255) NOT NULL
-);
+--);
 
 -- Insert some data into the table
 --INSERT INTO userss (id, username, email) VALUES
