@@ -5,10 +5,10 @@
 USE amal123;
 
 -- Create a table
-CREATE TABLE IF NOT EXISTS userss (
-    id INT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL
+--CREATE TABLE IF NOT EXISTS userss (
+ --   id INT PRIMARY KEY,
+   -- username VARCHAR(255) NOT NULL,
+    -- email VARCHAR(255) NOT NULL
 );
 
 -- Insert some data into the table
