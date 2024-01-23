@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Execute SQL Queries
+      - name: Execute SQL Queries full
         run: |
           
           SQL_SCRIPT_FILES=("sql_script.sql" "sql-script2.sql" "amalnew/"*.sql)
