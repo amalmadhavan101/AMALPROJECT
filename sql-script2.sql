@@ -5,10 +5,10 @@ CREATE DATABASE IF NOT EXISTS amal124;
 USE amal124;
 
 -- Create a table
-CREATE TABLE IF NOT EXISTS users2 (
-    id INT PRIMARY KEY,
-    username VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL
+-- CREATE TABLE IF NOT EXISTS users2 (
+--    id INT PRIMARY KEY,
+  --  username VARCHAR(255) NOT NULL,
+  --  email VARCHAR(255) NOT NULL
 );
 
 -- Insert some data into the table
