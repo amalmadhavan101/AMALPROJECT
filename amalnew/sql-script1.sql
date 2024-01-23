@@ -13,6 +13,6 @@ CREATE TABLE IF NOT EXISTS amalt (
 
 -- Insert some data into the table
 INSERT INTO amalt (id, username, email) VALUES
-(1, 'john_doe', 'john@example.com'),
-(2, 'jane_doe', 'jane@example.com');
+(3, 'john_doe', 'john@example.com'),
+(4, 'jane_doe', 'jane@example.com');
 select * from amalt;
