@@ -13,6 +13,6 @@ CREATE TABLE IF NOT EXISTS users (
 
 -- Insert some data into the table
 INSERT INTO users (id, username, email) VALUES
-(1, 'ama', 'john@example.com'),
-(2, 'kic', 'janre@example.com');
+(1, 'ama', 'john@egmail.com'),
+(2, 'kic', 'janre@exampe.com');
 select * from users;
