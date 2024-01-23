@@ -23,5 +23,5 @@ jobs:
 
           # Execute the SQL script using the MySQL client
           mysql -h localhost -u amal -p'amal123' -e "$SQL_SCRIPT_CONTENT"
-          mysql -h localhost -u amal -p'amal123' -e "$SQL_SCRIPT_CONTENT"
+          mysql -h localhost -u amal -p'amal123' -e "$SQL_SCRIPT_CONTENT1"
           
