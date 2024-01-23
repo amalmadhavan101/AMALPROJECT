@@ -18,6 +18,10 @@ jobs:
         run: |
           # Fetch the content of the SQL script file
           SQL_SCRIPT_CONTENT=$(cat sql-script2.sql)
+          SQL_SCRIPT_CONTENT1=$(cat sql_script.sql)
+          
 
           # Execute the SQL script using the MySQL client
           mysql -h localhost -u amal -p'amal123' -e "$SQL_SCRIPT_CONTENT"
+          mysql -h localhost -u amal -p'amal123' -e "$SQL_SCRIPT_CONTENT"
+          
