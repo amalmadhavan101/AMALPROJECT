@@ -1,5 +1,5 @@
 -- Create a database
---CREATE DATABASE IF NOT EXISTS amal123;
+--CREATE DATABASE IF NOT EXISTS amal123
 
 -- Use the created database
 USE amal123;
