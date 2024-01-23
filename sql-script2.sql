@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS users2 (
 );
 
 -- Insert some data into the table
-INSERT INTO users (id, username, email) VALUES
+INSERT INTO users2 (id, username, email) VALUES
 (1, 'ama', 'john@egmail.com'),
 (2, 'kic', 'janre@exampe.com');
 select * from users2;
