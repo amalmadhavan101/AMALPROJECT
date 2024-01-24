@@ -15,5 +15,5 @@ jobs:
 
       - name: Execute SQL Script
         run: |
-          chmod +x run_sql_script.sh.sh
+          chmod +x run_sql_script.sh
           ./run_sql_script.sh.sh
