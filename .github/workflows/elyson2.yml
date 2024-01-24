@@ -1,4 +1,4 @@
-name: Work Learning
+name: sql Learning
 on:
   push:
     branches:
@@ -15,5 +15,5 @@ jobs:
 
       - name: Execute SQL Script
         run: |
-          chmod +x path/to/run_sql_script.sh
-          ./path/to/run_sql_script.sh
+          chmod +x run_sql_script.sh.sh
+          ./run_sql_script.sh.sh
