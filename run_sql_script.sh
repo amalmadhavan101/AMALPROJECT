@@ -1,4 +1,5 @@
 #!/bin/ksh
+set -x
 
 # Specify the path to the directory containing your SQL script files
 SQL_SCRIPT_DIR="amalnew"
