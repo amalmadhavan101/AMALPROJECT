@@ -25,6 +25,6 @@ jobs:
             
             SQL_SCRIPT_CONTENT=$(cat "$SQL_SCRIPT_FILE")
 
-            # Execute the SQL script using the MySQL client
+            # Execute the SQL script using the MySQL client done
             mysql -h localhost -u amal -p'amal123' -e "$SQL_SCRIPT_CONTENT"
           done
