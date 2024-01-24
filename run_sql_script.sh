@@ -15,7 +15,7 @@ if [ -d "$SQL_SCRIPT_DIR" ]; then
         # Check if the SQL script file exists
         if [ -f "$SQL_SCRIPT_FILE" ]; then
             # Fetch the content of the SQL script file
-            SQL_SCRIPT_CONTENT=$(cat "$SQL_SCRIPT_FILE")
+            SQL_SCRIPT_CONTENT="$(cat "$SQL_SCRIPT_FILE")"
 
             # Execute the SQL script using the MySQL client
             mysql -h localhost -u amal -p'amal123' -e "$SQL_SCRIPT_CONTENT"
