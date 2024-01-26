@@ -1,0 +1,30 @@
+name: Work Learning
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/elyson.yml"
+
+jobs:
+  MySQL-SetUp:
+    runs-on: 'self-hosted'
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Execute SQL Queries full
+        run: |
+          
+          SQL_SCRIPT_FILES=("sql_script.sql" "sql-script2.sql" "amalnew/"*.sql)
+
+          # Loop through the array and execute each SQL script
+          for SQL_SCRIPT_FILE in "${SQL_SCRIPT_FILES[@]}"; do
+            echo "Executing SQL script: $SQL_SCRIPT_FILE"
+            
+            
+            SQL_SCRIPT_CONTENT=$(cat "$SQL_SCRIPT_FILE")
+
+            # Execute the SQL script using the MySQL client 
+            mysql -h localhost -u amal -p'amal123' -e "$SQL_SCRIPT_CONTENT"
+          done

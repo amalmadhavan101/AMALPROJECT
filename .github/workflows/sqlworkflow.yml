@@ -1,0 +1,49 @@
+name: github-action-learning2
+run-name: ${{ github.actor }} is learning GitHub Actions2
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/sqlworkflow.yml
+
+jobs:
+  Docker-SetUp:
+    runs-on: 'self-hosted'  
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker
+        run: |
+          sudo apt update
+          sudo apt install docker.io -y
+          sudo service docker start
+          sudo usermod -aG docker $USER
+          sudo newgrp docker
+
+          
+      - name: Check Docker version
+        run: docker --version
+
+  MySQL-SetUp:
+    runs-on: 'self-hosted'  
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up MySQL Container
+        run: | 
+          docker stop mysql-container || true
+          docker rm mysql-container || true
+          docker pull mysql:latest
+          docker run --name mysql-container -e MYSQL_ROOT_PASSWORD=your_password -d -p 3307:3307 mysql:latest
+          sleep 30
+
+      - name: Execute SQL Queries
+        run: |
+          # Fetch the content of the SQL script file
+          SQL_SCRIPT_CONTENT=$(cat sql_script.sql)
+
+          # Execute the SQL script in the MySQL container
+          echo "$SQL_SCRIPT_CONTENT" | docker exec -i mysql-container mysql -uroot -p'your_password'

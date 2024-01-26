@@ -1,0 +1,19 @@
+name: sql Learning
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/elyson2.yml"
+
+jobs:
+  MySQL-SetUp:
+    runs-on: 'self-hosted'
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Execute SQL Script
+        run: |
+          chmod +x run_sql_script.sh
+          sh -x run_sql_script.sh
